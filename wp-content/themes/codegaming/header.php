@@ -12,8 +12,7 @@
     <div class="wrap header-inner">
         <?php if (has_custom_logo()) { the_custom_logo(); } else { ?>
         <a class="brand" href="<?php echo esc_url(home_url('/')); ?>">
-            <svg class="brand-icon" viewBox="0 0 36 44" aria-hidden="true"><path d="M5 2h26v7l-3 4v12l5 5v12H3V30l5-5V13L5 9Z"/><path d="M10 7h16M11 14h14v12H11zM8 32h20M12 32v-4m9 4v-2m5 2v-2M10 37h16"/></svg>
-            <span>CodeGaming<small>ARCADE CLUB</small></span>
+            <img class="site-logo" src="<?php echo esc_url(cg_logo_url()); ?>" width="100" height="100" alt="CodeGaming Arcade, inicio">
         </a>
         <?php } ?>
         <nav class="nav" aria-label="Navegación principal">

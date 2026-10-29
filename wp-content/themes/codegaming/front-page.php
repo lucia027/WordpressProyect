@@ -8,7 +8,7 @@
             <div class="actions"><a class="button" href="#articulos">Explorar artículos <span aria-hidden="true">↗</span></a><a class="text-link" href="<?php echo esc_url(home_url('/sobre-nosotros/')); ?>">Conoce el club</a></div>
             <p class="hero-note">SIN PRISAS. SIN PAY TO WIN. SOLO UNA PARTIDA MÁS.</p>
         </div>
-        <div class="hero-art"><img src="<?php echo esc_url(cg_asset('hero-arcade')); ?>" width="550" height="550" alt="Ilustración de una recreativa retro con luces cian, violetas y rosas y el mensaje Insert Coin" fetchpriority="high"><span class="art-label">EST. 2026 / PRESS START_</span></div>
+        <div class="hero-art"><img class="project-logo" src="<?php echo esc_url(cg_logo_url()); ?>" width="1000" height="1000" alt="Logo de CodeGaming Arcade: una recreativa pixelada en cian y violeta sobre el nombre del proyecto" fetchpriority="high"><span class="art-label">EST. 2026 / PRESS START_</span></div>
     </section>
     <div class="ticker" aria-hidden="true"><div class="wrap ticker-inner"><span>INSERT COIN</span><b>✦</b><span>CULTURA ARCADE</span><b>✦</b><span>PÍXELES CON HISTORIA</span><b>✦</b><span>ONE MORE GAME</span></div></div>
     <section class="wrap stories" id="articulos" aria-labelledby="stories-title">

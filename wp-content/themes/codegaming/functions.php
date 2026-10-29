@@ -25,6 +25,7 @@ add_filter('document_title_parts', function ($parts) {
 });
 
 function cg_asset($name) { return get_template_directory_uri() . '/assets/' . $name . '.svg'; }
+function cg_logo_url() { return get_template_directory_uri() . '/assets/logo.jpg'; }
 function cg_minutes() { return max(1, (int) ceil(str_word_count(wp_strip_all_tags(get_the_content())) / 200)); }
 function cg_art($id = null) {
     $id = $id ?: get_the_ID();
