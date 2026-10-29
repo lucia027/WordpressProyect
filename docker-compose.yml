@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${MYSQL_DATABASE:?Crea el archivo .env}
+      MARIADB_USER: ${MYSQL_USER:?Crea el archivo .env}
+      MARIADB_PASSWORD: ${MYSQL_PASSWORD:?Crea el archivo .env}
+      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Crea el archivo .env}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${WORDPRESS_PORT:-8080}:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:?Crea el archivo .env}
+      WORDPRESS_DB_USER: ${MYSQL_USER:?Crea el archivo .env}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:?Crea el archivo .env}
+    volumes:
+      - wp_core:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:
+  wp_core:

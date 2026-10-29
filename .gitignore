@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+
+# Datos locales, secretos y copias privadas
+/backups/
+/mariadb_data/
+/wordpress_data/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
+/wp-content/backup*/
+/wp-content/debug.log
+/wp-content/*.log
+/wp-content/object-cache.php
+/wp-content/advanced-cache.php
+# Paquetes oficiales generados por WordPress (no son codigo del proyecto)
+/wp-content/languages/
+/wp-content/themes/twentytwenty*/
+/wp-content/plugins/akismet/
+/wp-content/plugins/hello.php
+.DS_Store
+Thumbs.db
